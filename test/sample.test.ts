@@ -1,3 +1,3 @@
-test.skip("should execute", ()=>{
+it("should execute", ()=>{
   expect(1+1).toBe(2)
 })

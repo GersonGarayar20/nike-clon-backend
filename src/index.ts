@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import { routes } from './routes';
 
+import { connectMongo } from '@/db/mongo';
+connectMongo()
+
 const app = express()
 app.use(cors())
 app.use(express.json())
