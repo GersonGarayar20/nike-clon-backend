@@ -9,8 +9,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "dev": "tsx watch src/index.ts",
-    "start": "node build/server.js",
-    "build": "tsup src --out-dir build"
+    "start": "node dist/index.js",
+    "build": "tsup src --format esm"
   },
   "keywords": [],
   "author": "",
