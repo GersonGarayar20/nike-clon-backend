@@ -21,8 +21,13 @@ const shoeSchema = new Schema({
     transform: (doc, ret) => {
       ret.id = ret._id;
       delete ret._id;
-    }
+    },
+    getters: true
   }
 })
+
+shoeSchema.virtual('discountedPrice').get(function() {
+  return this.price - (this.price * this.discount / 100);
+});
 
 export const ShoeModel = model('Shoe', shoeSchema)
