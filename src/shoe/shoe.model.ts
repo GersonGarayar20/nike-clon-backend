@@ -27,7 +27,8 @@ const shoeSchema = new Schema({
 })
 
 shoeSchema.virtual('discountedPrice').get(function() {
-  return this.price - (this.price * this.discount / 100);
+  const discountedPrice = this.price - (this.price * this.discount / 100);
+  return discountedPrice.toFixed(2);
 });
 
 export const ShoeModel = model('Shoe', shoeSchema)
